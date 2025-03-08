@@ -1,0 +1,45 @@
+{
+    "name": "File Hosting Hub",
+    "short_name": "Files Hub",
+    "description": "A file hosting hub for organizing and accessing PDFs, notes, and other files through external links.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4a6fa5",
+    "icons": [
+        {
+            "src": "assets/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "orientation": "any",
+    "categories": ["productivity", "utilities"],
+    "shortcuts": [
+        {
+            "name": "PDFs",
+            "short_name": "PDFs",
+            "description": "View PDF files",
+            "url": "/pdfs.html"
+        },
+        {
+            "name": "Notes",
+            "short_name": "Notes",
+            "description": "View notes",
+            "url": "/notes.html"
+        },
+        {
+            "name": "Files",
+            "short_name": "Files",
+            "description": "View other files",
+            "url": "/files.html"
+        }
+    ]
+} 

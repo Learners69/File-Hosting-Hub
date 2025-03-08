@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - File Hosting Hub</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/search-fix.css">
+    <link rel="stylesheet" href="css/shortcuts-responsive.css">
+    <!-- Add theme color meta tag for mobile browsers -->
+    <meta name="theme-color" content="#4a6fa5">
+    <!-- Add prefers-color-scheme meta tag -->
+    <meta name="color-scheme" content="light dark">
+    <!-- Preload critical assets -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>File Hosting Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pdfs.html">PDFs</a></li>
+                    <li><a href="notes.html" class="active">Notes</a></li>
+                    <li><a href="files.html">Other Files</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">Toggle Theme</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Notes Collection</h2>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search Notes...">
+                    <button id="search-btn">Search</button>
+                    <button id="advanced-search-toggle" class="advanced-search-toggle">Show Advanced Search</button>
+                    <div class="advanced-search-panel">
+                        <h4>Advanced Search Options</h4>
+                        <ul>
+                            <li><code>title:keyword</code> - Search in titles only</li>
+                            <li><code>tag:keyword</code> - Search in tags only</li>
+                            <li><code>source:keyword</code> - Search by source</li>
+                            <li><code>date:2023</code> - Search by date</li>
+                            <li><code>-keyword</code> - Exclude results with this keyword</li>
+                        </ul>
+                        <p>Example: <code>title:lecture -draft tag:math</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filters">
+            <div class="container">
+                <h3>Filter by Tags</h3>
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="research">Research</button>
+                    <button class="filter-btn" data-filter="personal">Personal</button>
+                    <button class="filter-btn" data-filter="work">Work</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="sort-options">
+            <div class="container">
+                <h3>Sort by</h3>
+                <div class="sort-buttons">
+                    <button class="sort-btn active" data-sort="date-desc">Newest First</button>
+                    <button class="sort-btn" data-sort="date-asc">Oldest First</button>
+                    <button class="sort-btn" data-sort="name-asc">Name (A-Z)</button>
+                    <button class="sort-btn" data-sort="name-desc">Name (Z-A)</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="notes-listing">
+            <div class="container">
+                <div class="link-grid">
+                    <!-- Sample content for testing -->
+                    <div class="link-card" data-category="research" data-date="2023-03-15" data-name="Research Notes">
+                        <div class="link-icon note-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Research Notes</h3>
+                        <p>Comprehensive notes from a recent research project, including methodology, findings, and conclusions. These notes are well-organized and include references to relevant literature.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Mar 15, 2023</span>
+                            <span class="last-updated">Updated: Mar 20, 2023</span>
+                            <span class="author">Author: Research Team</span>
+                            <span class="tags">Tags: research, project, methodology</span>
+                            <div class="tags">
+                                <span class="tag">research</span>
+                                <span class="tag">project</span>
+                                <span class="tag">methodology</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/research-notes" target="_blank" rel="noopener">View Notes</a>
+                    </div>
+                    <div class="link-card" data-category="personal" data-date="2023-02-10" data-name="Personal Journal">
+                        <div class="link-icon note-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Personal Journal</h3>
+                        <p>A collection of personal journal entries documenting thoughts, experiences, and reflections. This journal provides insights into personal growth and development over time.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Feb 10, 2023</span>
+                            <span class="last-updated">Updated: Mar 5, 2023</span>
+                            <span class="entries">Entries: 25</span>
+                            <span class="tags">Tags: personal, journal, reflections</span>
+                            <div class="tags">
+                                <span class="tag">personal</span>
+                                <span class="tag">journal</span>
+                                <span class="tag">reflections</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/personal-journal" target="_blank" rel="noopener">View Notes</a>
+                    </div>
+                    <div class="link-card" data-category="work" data-date="2023-01-05" data-name="Work Meeting Notes">
+                        <div class="link-icon note-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Work Meeting Notes</h3>
+                        <p>Detailed notes from work meetings, including discussion points, action items, and decisions made. These notes serve as a reference for project progress and team responsibilities.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Jan 5, 2023</span>
+                            <span class="last-updated">Updated: Feb 28, 2023</span>
+                            <span class="meetings">Meetings: 12</span>
+                            <span class="tags">Tags: work, meetings, projects</span>
+                            <div class="tags">
+                                <span class="tag">work</span>
+                                <span class="tag">meetings</span>
+                                <span class="tag">projects</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/work-meeting-notes" target="_blank" rel="noopener">View Notes</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 File Hosting Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/keyboard-shortcuts.js" defer></script>
+    <script src="js/optimization.js" defer></script>
+    <script src="js/shortcuts-test.js" defer></script>
+</body>
+</html> 

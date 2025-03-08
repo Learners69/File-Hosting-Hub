@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Hosting Hub</title>
+    <!-- Performance optimization meta tags -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Add theme color meta tag for mobile browsers -->
+    <meta name="theme-color" content="#4a6fa5">
+    <!-- Add prefers-color-scheme meta tag -->
+    <meta name="color-scheme" content="light dark">
+    <!-- Add description for SEO -->
+    <meta name="description" content="A file hosting hub for organizing and accessing PDFs, notes, and other files through external links.">
+    
+    <!-- CSS files with optimized loading -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/search-fix.css">
+    <link rel="stylesheet" href="css/shortcuts-responsive.css">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="js/theme.js" as="script">
+    
+    <!-- PWA support -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/images/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="File Hosting Hub">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>File Hosting Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="pdfs.html">PDFs</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="files.html">Other Files</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">Toggle Theme</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Welcome to File Hosting Hub</h2>
+                <p>Your organized collection of PDFs, notes, and other files.</p>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search all files...">
+                    <button id="search-btn">Search</button>
+                    <button id="advanced-search-toggle" class="advanced-search-toggle">Show Advanced Search</button>
+                    <div class="advanced-search-panel">
+                        <h4>Advanced Search Options</h4>
+                        <ul>
+                            <li><code>title:keyword</code> - Search in titles only</li>
+                            <li><code>tag:keyword</code> - Search in tags only</li>
+                            <li><code>type:pdf</code> - Filter by file type</li>
+                            <li><code>source:keyword</code> - Search by source</li>
+                            <li><code>date:2023</code> - Search by date</li>
+                            <li><code>-keyword</code> - Exclude results with this keyword</li>
+                        </ul>
+                        <p>Example: <code>title:guide -old tag:important</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured">
+            <div class="container">
+                <h2>Featured Links</h2>
+                <div class="link-grid">
+                    <!-- Sample content for testing -->
+                    <div class="link-card" data-category="PDF" data-date="2023-03-15" data-name="Sample PDF">
+                        <div class="link-icon pdf-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="M9 15h6"></path>
+                                <path d="M9 18h6"></path>
+                                <path d="M9 12h2"></path>
+                            </svg>
+                        </div>
+                        <h3>Sample PDF</h3>
+                        <p>A sample PDF document with detailed information about a specific topic. This document includes charts, tables, and comprehensive analysis.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Mar 15, 2023</span>
+                            <span class="file-size">Size: 2.4 MB</span>
+                            <span class="source">Source: Example Library</span>
+                            <div class="tags">
+                                <span class="tag">sample</span>
+                                <span class="tag">document</span>
+                                <span class="tag">pdf</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/sample.pdf" target="_blank" rel="noopener">View PDF</a>
+                    </div>
+                    <div class="link-card" data-category="NOTE" data-date="2023-02-20" data-name="Sample Note">
+                        <div class="link-icon note-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Sample Note</h3>
+                        <p>A comprehensive note document containing important information, key points, and references. This note is well-structured and easy to follow.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Feb 20, 2023</span>
+                            <span class="last-updated">Updated: Feb 25, 2023</span>
+                            <span class="source">Source: Example Notes</span>
+                            <div class="tags">
+                                <span class="tag">notes</span>
+                                <span class="tag">research</span>
+                                <span class="tag">important</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/sample-note" target="_blank" rel="noopener">View Note</a>
+                    </div>
+                    <div class="link-card" data-category="FILE" data-date="2023-01-10" data-name="Sample File">
+                        <div class="link-icon file-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                <polyline points="13 2 13 9 20 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Sample File</h3>
+                        <p>A miscellaneous file that contains useful information and resources. This file is in a standard format and can be accessed with common software.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Jan 10, 2023</span>
+                            <span class="file-type">Type: DOCX</span>
+                            <span class="file-size">Size: 1.2 MB</span>
+                            <span class="source">Source: Example Repository</span>
+                            <div class="tags">
+                                <span class="tag">file</span>
+                                <span class="tag">document</span>
+                                <span class="tag">resource</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/sample-file" target="_blank" rel="noopener">View File</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2>About This Site</h2>
+                <p>This website provides organized access to various types of files including PDFs, notes, and other file types through external URL links.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 File Hosting Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript files with optimized loading -->
+    <script src="js/main.js" defer></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/tags.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/keyboard-shortcuts.js" defer></script>
+    <script src="js/loading-states.js" defer></script>
+    
+    <!-- Phase 5: Optimization scripts -->
+    <script src="js/optimization.js" defer></script>
+    <script src="js/performance-test.js" defer></script>
+    
+    <!-- Inline critical script for faster page load -->
+    <script>
+        // Check if the browser supports the Performance API
+        if (window.performance && window.performance.mark) {
+            window.performance.mark('app-init');
+        }
+        
+        // Add a class to the body when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('dom-ready');
+            
+            if (window.performance && window.performance.mark) {
+                window.performance.mark('dom-ready');
+                window.performance.measure('dom-loading', 'app-init', 'dom-ready');
+            }
+        });
+        
+        // Add a class to the body when page is fully loaded
+        window.addEventListener('load', function() {
+            document.body.classList.add('page-loaded');
+            
+            if (window.performance && window.performance.mark) {
+                window.performance.mark('page-loaded');
+                window.performance.measure('page-loading', 'app-init', 'page-loaded');
+            }
+        });
+    </script>
+    
+    <!-- Test script for result counter -->
+    <script src="js/test-result-counter.js" defer></script>
+    
+    <!-- Responsive test script -->
+    <script src="js/responsive-test.js" defer></script>
+    <script src="js/shortcuts-test.js" defer></script>
+</body>
+</html> 

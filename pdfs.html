@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFs - File Hosting Hub</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/search-fix.css">
+    <link rel="stylesheet" href="css/shortcuts-responsive.css">
+    <!-- Add theme color meta tag for mobile browsers -->
+    <meta name="theme-color" content="#4a6fa5">
+    <!-- Add prefers-color-scheme meta tag -->
+    <meta name="color-scheme" content="light dark">
+    <!-- Preload critical assets -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>File Hosting Hub</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pdfs.html" class="active">PDFs</a></li>
+                    <li><a href="notes.html">Notes</a></li>
+                    <li><a href="files.html">Other Files</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">Toggle Theme</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>PDF Documents</h2>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search PDFs...">
+                    <button id="search-btn">Search</button>
+                    <button id="advanced-search-toggle" class="advanced-search-toggle">Show Advanced Search</button>
+                    <div class="advanced-search-panel">
+                        <h4>Advanced Search Options</h4>
+                        <ul>
+                            <li><code>title:keyword</code> - Search in titles only</li>
+                            <li><code>tag:keyword</code> - Search in tags only</li>
+                            <li><code>type:pdf</code> - Filter by file type</li>
+                            <li><code>source:keyword</code> - Search by source</li>
+                            <li><code>date:2023</code> - Search by date</li>
+                            <li><code>-keyword</code> - Exclude results with this keyword</li>
+                        </ul>
+                        <p>Example: <code>title:guide -beginner tag:tutorial</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="filters">
+            <div class="container">
+                <h3>Filter by Category</h3>
+                <div class="filter-options">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="books">Books</button>
+                    <button class="filter-btn" data-filter="articles">Articles</button>
+                    <button class="filter-btn" data-filter="documents">Documents</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="sort-options">
+            <div class="container">
+                <h3>Sort by</h3>
+                <div class="sort-buttons">
+                    <button class="sort-btn active" data-sort="date-desc">Newest First</button>
+                    <button class="sort-btn" data-sort="date-asc">Oldest First</button>
+                    <button class="sort-btn" data-sort="name-asc">Name (A-Z)</button>
+                    <button class="sort-btn" data-sort="name-desc">Name (Z-A)</button>
+                    <button class="sort-btn" data-sort="size-desc">Size (Largest)</button>
+                    <button class="sort-btn" data-sort="size-asc">Size (Smallest)</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="pdf-listing">
+            <div class="container">
+                <div class="link-grid">
+                    <!-- Sample content for testing -->
+                    <div class="link-card" data-category="books" data-date="2023-01-15" data-name="Sample Book PDF">
+                        <div class="link-icon pdf-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="M9 15h6"></path>
+                                <path d="M9 18h6"></path>
+                                <path d="M9 12h2"></path>
+                            </svg>
+                        </div>
+                        <h3>Sample Book PDF</h3>
+                        <p>A comprehensive book in PDF format covering important topics and providing in-depth analysis. This book is well-structured and includes helpful illustrations.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Jan 15, 2023</span>
+                            <span class="file-size">Size: 8.5 MB</span>
+                            <span class="pages">Pages: 245</span>
+                            <span class="author">Author: John Smith</span>
+                            <span class="source">Source: Example Library</span>
+                            <div class="tags">
+                                <span class="tag">book</span>
+                                <span class="tag">reference</span>
+                                <span class="tag">educational</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/sample-book.pdf" target="_blank" rel="noopener">View PDF</a>
+                    </div>
+                    <div class="link-card" data-category="articles" data-date="2023-02-20" data-name="Sample Article PDF">
+                        <div class="link-icon pdf-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="M9 15h6"></path>
+                                <path d="M9 18h6"></path>
+                                <path d="M9 12h2"></path>
+                            </svg>
+                        </div>
+                        <h3>Sample Article PDF</h3>
+                        <p>A scholarly article in PDF format discussing recent research findings and their implications. This article includes data tables, charts, and a comprehensive bibliography.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Feb 20, 2023</span>
+                            <span class="file-size">Size: 1.2 MB</span>
+                            <span class="pages">Pages: 12</span>
+                            <span class="author">Author: Jane Doe, PhD</span>
+                            <span class="source">Source: Example Journal</span>
+                            <div class="tags">
+                                <span class="tag">article</span>
+                                <span class="tag">research</span>
+                                <span class="tag">academic</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/sample-article.pdf" target="_blank" rel="noopener">View PDF</a>
+                    </div>
+                    <div class="link-card" data-category="documents" data-date="2023-03-10" data-name="Sample Document PDF">
+                        <div class="link-icon pdf-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="M9 15h6"></path>
+                                <path d="M9 18h6"></path>
+                                <path d="M9 12h2"></path>
+                            </svg>
+                        </div>
+                        <h3>Sample Document PDF</h3>
+                        <p>An official document in PDF format containing important information, guidelines, and procedures. This document is well-formatted and includes all necessary details.</p>
+                        <div class="metadata">
+                            <span class="date-added">Added: Mar 10, 2023</span>
+                            <span class="file-size">Size: 3.7 MB</span>
+                            <span class="pages">Pages: 28</span>
+                            <span class="source">Source: Example Organization</span>
+                            <div class="tags">
+                                <span class="tag">document</span>
+                                <span class="tag">official</span>
+                                <span class="tag">guidelines</span>
+                            </div>
+                        </div>
+                        <a href="https://example.com/sample-document.pdf" target="_blank" rel="noopener">View PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 File Hosting Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/search-optimization.js" defer></script>
+    <script src="js/tags.js" defer></script>
+    <!-- New JavaScript Files for Phase 4 -->
+    <script src="js/animations.js" defer></script>
+    <script src="js/keyboard-shortcuts.js" defer></script>
+    <script src="js/loading-states.js" defer></script>
+    <script src="js/shortcuts-test.js" defer></script>
+</body>
+</html> 
