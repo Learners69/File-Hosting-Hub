@@ -42,7 +42,8 @@
         left: -250px; /* Start off-screen */
         width: 250px;
         height: 100vh;
-        background-color: var(--card-background);
+        background-color: #ffffff; /* Explicit white background */
+        color: #333333; /* Explicit text color */
         flex-direction: column;
         padding: var(--spacing-md);
         box-shadow: var(--shadow);
@@ -50,6 +51,18 @@
         z-index: 999;
         overflow-y: auto;
         padding-top: 60px; /* Space for the close button */
+    }
+
+    /* For dark mode support */
+    @media (prefers-color-scheme: dark) {
+        nav ul {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        
+        nav ul li a {
+            color: #ffffff;
+        }
     }
 
     nav.active ul {
@@ -82,6 +95,7 @@
         padding: var(--spacing-sm);
         text-align: left;
         font-size: 1.1rem;
+        color: inherit; /* Use the color from parent */
     }
 
     /* Close button inside the menu */

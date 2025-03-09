@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     nav.querySelector('ul').prepend(mobileMenuClose);
     
     // Toggle menu when hamburger icon is clicked
-    mobileMenuToggle.addEventListener('click', function() {
+    mobileMenuToggle.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent event from bubbling up
         nav.classList.add('active');
         menuOverlay.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
@@ -32,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Close menu when X button is clicked
-    mobileMenuClose.addEventListener('click', function() {
+    mobileMenuClose.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent event from bubbling up
         closeMenu();
     });
     
@@ -43,8 +45,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (!nav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+        // Only close if menu is active and click is outside the menu and not on the toggle button
+        if (nav.classList.contains('active') && 
+            !nav.querySelector('ul').contains(event.target) && 
+            !mobileMenuToggle.contains(event.target)) {
             closeMenu();
+        }
+    });
+    
+    // Prevent clicks inside the menu from closing it
+    nav.querySelector('ul').addEventListener('click', function(event) {
+        // Only stop propagation for clicks on menu items, not the close button
+        if (!mobileMenuClose.contains(event.target)) {
+            event.stopPropagation();
         }
     });
     
