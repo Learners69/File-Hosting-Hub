@@ -19,6 +19,15 @@
         left: 15px;
         top: 15px;
         z-index: 1000;
+        transition: opacity 0.3s ease;
+    }
+    
+    /* Hide hamburger icon when menu is open */
+    nav.active ~ .mobile-menu-toggle,
+    nav.active + .mobile-menu-toggle,
+    .menu-overlay.active ~ .mobile-menu-toggle {
+        opacity: 0;
+        visibility: hidden;
     }
 
     header .container {
